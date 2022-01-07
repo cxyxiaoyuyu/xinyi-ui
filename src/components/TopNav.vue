@@ -38,6 +38,7 @@ export default defineComponent({
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  background: #fff;
   .logo {
     cursor: pointer; 
     font-weight: bold;
