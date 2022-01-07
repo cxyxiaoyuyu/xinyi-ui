@@ -18,7 +18,6 @@ export default defineComponent({
 
     // 每次路由切换关闭aside
     router.afterEach(() => {
-      console.log("路由切换了");
       if(deviceWidth < 500) {
         asideVisible.value = false
       }
@@ -47,5 +46,8 @@ li {
 a {
   text-decoration: none;
   color: inherit;
+  &.active {
+     color: #3eaf7c;  // 路由匹配时的字体颜色 
+  }
 }
 </style>

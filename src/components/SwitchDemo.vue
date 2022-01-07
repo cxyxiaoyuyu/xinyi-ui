@@ -1,167 +1,21 @@
 <template>
  <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
- </div>
- <div>
-  Switch Demo
+  <Switch v-model:value="value1"/>
  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent,reactive, toRefs } from 'vue'
+import Switch from '../lib/Switch.vue'
 export default defineComponent({
   name: '',
   setup(){
-    
-    return{ }
-  }
+    const state = reactive({
+      value1: true,
+    }) 
+    return toRefs(state)
+  },
+  components: {Switch}
 })
 </script>
 
