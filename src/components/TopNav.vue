@@ -1,7 +1,7 @@
 <template>
   <div class="topNav">
     <div class="logo">
-      <svg class="icon menu" @click="toggleAside">
+      <svg class="icon menu" @click="toggleAside" v-if="$route.path === '/doc'">
         <use xlink:href="#icon-menu"></use>
       </svg>
       <span>XinYi UI</span>
@@ -19,6 +19,7 @@
 
 <script lang="ts">
 import { defineComponent, inject, Ref } from "vue";
+import {useRoute} from 'vue-router'
 export default defineComponent({
   name: "",
   setup() {
@@ -26,6 +27,8 @@ export default defineComponent({
     const toggleAside = () => {
       asideVisible.value = !asideVisible.value;
     };
+    const route = useRoute()
+    console.log(route)
     return { toggleAside };
   },
 });
