@@ -33,21 +33,49 @@ export default defineComponent({
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 html,
 body {
   height: 100vh;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  min-width: 300px;
 }
 li {
   list-style: none;
 }
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
   &.active {
      color: #3eaf7c;  // 路由匹配时的字体颜色 
   }
 }
+h2 {
+  margin-bottom: 20px;
+}
+h4 {
+  margin: 25px 0 15px;
+}
+
+pre {
+  border-radius: 2px;
+  position: relative;
+  background-color: #f8f8f8;
+  padding: 10px 15px;
+  margin: 10px 0;
+}
+code {
+  display: block;
+  white-space: pre-line;
+}
+.icon {
+ width: 1em; 
+ height: 1em;
+ vertical-align: -0.15em;
+ fill: currentColor;
+ overflow: hidden;
+ }
+
 </style>

@@ -1,6 +1,7 @@
 <template>
  <div>
   Doc 默认页面
+  <d-button id="primaryBtn" style="margin-right: 8px">Primary</d-button>
  </div>
 </template>
 

@@ -48,6 +48,7 @@ $asideWidth: 200px;
   }
   main {
     margin-left: $asideWidth;
+    padding: 20px;
   }
 
   @media screen and (max-width: 500px) {
