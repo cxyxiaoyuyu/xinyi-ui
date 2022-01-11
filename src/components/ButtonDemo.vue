@@ -81,7 +81,7 @@ export default {
       // themeHtml.value = hljs.highlight('<span>Hello World!</span>', {language: 'xml'}).value
 
     });
-
+    console.log(Button,'buttonllll')
     return { onClick,themeHtml };
   },
 };

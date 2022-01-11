@@ -10,7 +10,7 @@ import InputDemo from '../components/InputDemo.vue'
 import TabsDemo from '../components/InputDemo.vue'
 
 import { h } from 'vue';
-import Markdown from 'comp/Markdown.vue';
+import Markdown from '../components/Markdown.vue';
 const md = (filename:string) => h(Markdown, { path: `../markdown/${filename}.md`, key: filename })
 const router = createRouter({
   history: createWebHashHistory(),
