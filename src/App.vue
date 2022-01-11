@@ -52,24 +52,6 @@ a {
      color: #3eaf7c;  // 路由匹配时的字体颜色 
   }
 }
-h2 {
-  margin-bottom: 20px;
-}
-h4 {
-  margin: 25px 0 15px;
-}
-
-pre {
-  border-radius: 2px;
-  position: relative;
-  background-color: #f8f8f8;
-  padding: 10px 15px;
-  margin: 10px 0;
-}
-code {
-  display: block;
-  white-space: pre-line;
-}
 .icon {
  width: 1em; 
  height: 1em;

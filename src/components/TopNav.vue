@@ -27,8 +27,6 @@ export default defineComponent({
     const toggleAside = () => {
       asideVisible.value = !asideVisible.value;
     };
-    const route = useRoute()
-    console.log(route)
     return { toggleAside };
   },
 });

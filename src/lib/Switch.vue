@@ -27,7 +27,7 @@ $sh: $bh - 4px;
   width: $bh * 2;
   border: none;
   background: #c9c5c5;
-  border-radius: $bh/2;
+  border-radius: calc($bh / 2);
   position: relative;
   outline: none;
   span {

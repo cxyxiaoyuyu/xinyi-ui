@@ -1,18 +1,20 @@
 <template>
  <div>
   Doc 默认页面
-  <d-button id="primaryBtn" style="margin-right: 8px">Primary</d-button>
+  <MarkDown></MarkDown>
  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import MarkDown from '../components/MarkDown.vue'
 export default defineComponent({
   name: '',
   setup(){
     
     return{ }
-  }
+  },
+  components: {MarkDown}
 })
 </script>
 

@@ -1,6 +1,17 @@
 <template>
   <div class="doc">
     <aside :class="{ hide: !asideVisible }">
+      <h4>开始使用</h4>
+       <div class="route">
+        <router-link to="/doc/install"
+          >安装</router-link
+        >
+      </div>
+      <div class="route">
+        <router-link to="/doc/get-started"
+          >开始使用</router-link
+        >
+      </div>
       <h4>组件列表</h4>
       <div v-for="component in compentList" :key="component" class="route">
         <router-link :to="`/doc/${component.toLowerCase()}`"
@@ -49,6 +60,7 @@ $asideWidth: 200px;
   main {
     margin-left: $asideWidth;
     padding: 20px;
+    flex: 1;
   }
 
   @media screen and (max-width: 500px) {
