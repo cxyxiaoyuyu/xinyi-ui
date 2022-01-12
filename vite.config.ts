@@ -8,12 +8,10 @@ const vueI18nPlugin = {
   name: 'vue-i18n',
   transform(code, path) {
     if (/vue&type=demo/.test(path)) {
-      console.log(path, 'vueI18nPlugin')
       const file = fs.readFileSync(path.split('?')[0]).toString()
       const parsed = baseParse(file).children.find(n => n.tag === 'demo')
       const main = file.split(parsed.loc.source).join('').trim()
-      console.log(main,'main')
-      return `export default Comp => { Comp._sourceCode = ${JSON.stringify(main)} }`
+      return `export default Comp => { Comp.__sourceCode = ${JSON.stringify(main)} }`
     }
   }
 }

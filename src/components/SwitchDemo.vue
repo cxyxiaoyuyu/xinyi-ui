@@ -2,9 +2,9 @@
   <div>
     <h4>示例1 默认switch</h4>
     <div>
-      <SwitchDemo1></SwitchDemo1>
+      <component :is="SwitchDemo1"></component>
       <div>展示代码</div>
-      <pre>{{SwitchDemo1._sourceCode}}</pre>
+      <pre>{{SwitchDemo1.__sourceCode}}</pre>
     </div>
   </div>
 </template>
@@ -14,7 +14,6 @@ import { defineComponent, reactive, toRefs } from "vue";
 import SwitchDemo1 from './SwitchDemo1.vue'
 export default defineComponent({
   name: "",
-  components: { SwitchDemo1 },
   setup(){
     return {SwitchDemo1}
   }
