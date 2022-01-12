@@ -4,7 +4,7 @@
     <div>
       <SwitchDemo1></SwitchDemo1>
       <div>展示代码</div>
-      <pre><code></code></pre>
+      <pre>{{SwitchDemo1._sourceCode}}</pre>
     </div>
   </div>
 </template>
@@ -16,7 +16,6 @@ export default defineComponent({
   name: "",
   components: { SwitchDemo1 },
   setup(){
-    console.log(SwitchDemo1) 
     return {SwitchDemo1}
   }
 });

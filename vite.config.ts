@@ -7,13 +7,13 @@ import { baseParse } from '@vue/compiler-core'
 const vueI18nPlugin = {
   name: 'vue-i18n',
   transform(code, path) {
-    if (path.endsWith('SwitchDemo1.vue')) {
-      const file = fs.readFileSync(path).toString()
+    if (/vue&type=demo/.test(path)) {
+      console.log(path, 'vueI18nPlugin')
+      const file = fs.readFileSync(path.split('?')[0]).toString()
       const parsed = baseParse(file).children.find(n => n.tag === 'demo')
       const main = file.split(parsed.loc.source).join('').trim()
-      return `export default Comp => {
-        Comp.__sourceCode = ${JSON.stringify(main)}
-      }`
+      console.log(main,'main')
+      return `export default Comp => { Comp._sourceCode = ${JSON.stringify(main)} }`
     }
   }
 }
