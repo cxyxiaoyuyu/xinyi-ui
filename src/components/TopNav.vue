@@ -1,7 +1,7 @@
 <template>
   <div class="topNav">
     <div class="logo">
-      <svg class="icon menu" @click="toggleAside" v-if="$route.path === '/doc'">
+      <svg class="icon menu" @click="toggleAside" v-if="$route.path.includes('/doc')">
         <use xlink:href="#icon-menu"></use>
       </svg>
       <span>XinYi UI</span>
