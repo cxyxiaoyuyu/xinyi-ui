@@ -50,6 +50,7 @@ $asideWidth: 200px;
     padding: 20px;
     position: fixed;
     top: 60px;
+    z-index: 10;
     h4 {
       margin-bottom: 14px;
     }
