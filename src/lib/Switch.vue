@@ -12,6 +12,10 @@ export default defineComponent({
     value: {
       type: Boolean,
       required: true
+    },
+    disable: {
+      type: Boolean,
+      default: false 
     }
   },
   setup() {

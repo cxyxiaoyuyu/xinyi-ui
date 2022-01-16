@@ -1,12 +1,12 @@
-<demo>常规用法</demo>
+<demo>支持disabled</demo>
 
 <template>
-   <Switch v-model:value="value" />
+   <Switch v-model:value="value" disabled/>
 </template>
 
 <script lang="ts">
 import Switch from "../lib/Switch.vue";
-import { defineComponent, onMounted, ref } from "vue";
+import { defineComponent,ref } from "vue";
 export default defineComponent({
   name: "",
   setup() {
@@ -17,4 +17,3 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped></style>

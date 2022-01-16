@@ -30,7 +30,7 @@ export default {
       default: false
     }
   },
-  setup(props) {
+  setup(props:any) {
     const { theme, size, level } = props;
     const classes = computed(() => {
       return {

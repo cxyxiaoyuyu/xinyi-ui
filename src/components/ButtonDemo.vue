@@ -1,35 +1,8 @@
 <template>
-  <h2>Button 示例</h2>
-  <h4>示例1 主题按钮</h4>
-  
-  <div>
-    <Button theme="button">button按钮</Button>
-    <Button theme="link">你好</Button>
-    <Button theme="text">你好</Button>
-    <Button>默认button</Button>
-  </div>
+  <h2>Button 组件示例</h2>
+  <Demo :component="ButtonDemo1"></Demo>
+  <Demo :component="ButtonDemo2"></Demo>  
 
-  <h4>示例2 按钮大小</h4>
-  <div>
-    <div>
-      <Button size="big">大大大</Button>
-      <Button>普普通</Button>
-      <Button size="small">小小小</Button>
-    </div>
-    <div>
-      <Button theme="link" size="big">大大大</Button>
-      <Button theme="link">普普通</Button>
-      <Button size="small" theme="link">小小小</Button>
-    </div>
-    <div>
-      <Button size="big" theme="text">大大大</Button>
-      <Button theme="text">普普通</Button>
-      <Button size="small" theme="text">小小小</Button>
-    </div>
-  </div>
-  <div class="highlight">
-    <pre><code class="language-html" v-html="themeHtml"></code></pre>
-  </div>
 
   <h4>示例3 按钮等级</h4>
   <div>
@@ -64,25 +37,12 @@
 </template>
 <script lang="ts">
 import Button from "../lib/Button.vue";
-import hljs from "highlight.js";
-import "highlight.js/styles/github.css";
-import { ref,onMounted } from "vue";
-
+import ButtonDemo1 from "../Demo/ButtonDemo1.vue";
+import ButtonDemo2 from "../Demo/ButtonDemo2.vue";
 export default {
   components: { Button },
   setup() {
-    const onClick = () => {
-      console.log("hi");
-    };
-    const themeHtml = ref('')
-
-    onMounted(() => {
-      //@ts-ignore
-      // themeHtml.value = hljs.highlight('<span>Hello World!</span>', {language: 'xml'}).value
-
-    });
-    console.log(Button,'buttonllll')
-    return { onClick,themeHtml };
+    return { ButtonDemo1,ButtonDemo2 };
   },
 };
 </script>

@@ -1,4 +1,5 @@
 var MarkdownIt = require('markdown-it')
+// import MarkdownIt from "markdown-it"
 const marked = new MarkdownIt()
 
 const mdToJs = str => {

@@ -1,0 +1,71 @@
+<template>
+  <div class="demo">
+    <h2>{{component.__sourceCodeTitle}}</h2>
+    <div class="demo-component">
+      <component :is="component"></component>
+    </div>
+    <div class="demo-actions">
+      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
+      <Button @click="showCode" v-else>查看代码</Button>
+    </div>
+    <div class="demo-code" v-if="codeVisible">
+      <pre><code v-html="html"></code></pre>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent,ref } from "vue";
+import Button from '../lib/Button.vue'
+import hljs from "highlight.js";
+import "highlight.js/styles/github.css";
+export default defineComponent({
+  name: "",
+  props: {
+    component: {
+      type: Object,
+      require: true 
+    }
+  },
+  setup(props:any) {
+    const showCode = () => (codeVisible.value = true);
+    const hideCode = () => (codeVisible.value = false);
+    const codeVisible = ref(false);
+
+    const html = hljs.highlight(props.component.__sourceCode, {language: 'xml'}).value 
+    return { showCode,hideCode,codeVisible,html };
+  },
+  components: { Button }
+});
+</script>
+
+<style lang="scss" scoped>
+$border-color: #d9d9d9;
+.demo {
+  border: 1px solid $border-color;
+  margin: 16px 0 32px;
+  > h2 {
+    font-size: 20px;
+    padding: 8px 16px;
+    border-bottom: 1px solid $border-color;
+  }
+  &-component {
+    padding: 16px;
+  }
+  &-actions {
+    padding: 8px 16px;
+    border-top: 1px dashed $border-color;
+  }
+  &-code {
+    padding: 8px 16px;
+    border-top: 1px dashed $border-color;
+    > pre {
+      line-height: 1.1;
+      font-family: monospace;
+      margin: 0;
+      background: #f8f8f8;
+      padding: 8px;
+    }
+  }
+}
+</style>
