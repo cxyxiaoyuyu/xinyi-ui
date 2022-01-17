@@ -29,35 +29,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html,
-body {
-  height: 100vh;
-  font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  min-width: 300px;
-}
-li {
-  list-style: none;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-  &.active {
-     color: #3eaf7c;  // 路由匹配时的字体颜色 
-  }
-}
-.icon {
- width: 1em; 
- height: 1em;
- vertical-align: -0.15em;
- fill: currentColor;
- overflow: hidden;
- }
 
 </style>
