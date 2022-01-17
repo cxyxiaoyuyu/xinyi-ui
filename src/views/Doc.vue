@@ -47,12 +47,13 @@ $asideWidth: 200px;
     background: #fff;
     width: $asideWidth;
     height: calc(100vh - 60px);
-    padding: 20px;
+    padding: 10px 20px;
     position: fixed;
     top: 60px;
     z-index: 10;
     h4 {
-      margin-bottom: 14px;
+      margin: 18px 0 10px 0;
+      font-size: 17px;
     }
     .route {
       margin-bottom: 8px;
