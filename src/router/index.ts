@@ -5,6 +5,7 @@ import Doc from '../views/Doc.vue'
 
 import DocDemo from '../components/DocDemo.vue'
 import SwitchDemo from '../components/SwitchDemo.vue'
+import IconDemo from '../components/IconDemo.vue'
 import ButtonDemo from '../components/ButtonDemo.vue'
 import InputDemo from '../components/InputDemo.vue'
 import TabsDemo from '../components/InputDemo.vue'
@@ -24,6 +25,7 @@ const router = createRouter({
         { path: '', component: DocDemo },
         { path: 'install', component: md(install)},
         { path: 'get-started', component: md(getStarted) },
+        { path: 'icon', component: IconDemo },
         { path: 'switch', component: SwitchDemo },
         { path: 'button', component: ButtonDemo },
         { path: 'input', component: InputDemo },
