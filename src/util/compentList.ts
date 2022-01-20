@@ -1,4 +1,5 @@
 const componentList:Array<string> = [
+  'Icon',
   'Button',
   'Switch',
   'Input',
