@@ -15,9 +15,21 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .gulu-button-group {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  >.gulu-button {
+    border-right: 1px solid #fff; 
+    margin-left: 0;
+    border-radius: 0;
+    &:first-child {
+      
+    }
+  }
+
+  & + & {
+    margin-left: 8px; 
+  }
 }
 </style>

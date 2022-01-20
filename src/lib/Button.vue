@@ -1,7 +1,7 @@
 <template>
   <button class="gulu-button" :class="classes" v-bind="$attrs" :disabled="disabled">
     <Icon class="gulu-icon" :icon="icon" v-if="icon"></Icon>
-    <span><slot /></span>
+    <span v-if="$slots.default"><slot /></span>
   </button>
 </template>
 <script lang="ts">
@@ -38,7 +38,7 @@ export default {
       default: false,
     },
   },
-  setup(props: any) {
+  setup(props: any,{slots}) {
     const { type, plain, round, circle, disabled, text } = props;
     const classes = {
       [`gulu-type-${type}`]: type,
@@ -80,14 +80,14 @@ $colors: (
   transition: background 250ms;
   border: none;
   color: #fff;
-  > .gulu-icon {
-    margin-right: 4px;
+  & + & {
+    margin-left: 8px;
+  }
+  [class*=gulu-icon]+span {
+    margin-left: 4px; 
   }
   > span .gulu-icon {
     margin-left: 4px; 
-  }
-  & + & {
-    margin-left: 8px;
   }
   &.gulu-type-button {
     color: $color;
@@ -106,9 +106,6 @@ $colors: (
     width: $h;
     padding: 0;
     border-radius: 50%;
-    > .gulu-icon {
-      margin-right: 0px;
-    }
   }
   &.gulu-disabled {
     cursor: not-allowed;
