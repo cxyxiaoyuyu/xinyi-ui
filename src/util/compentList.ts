@@ -3,7 +3,8 @@ const componentList:Array<string> = [
   'Button',
   'Switch',
   'Input',
-  'Tabs'
+  'Tabs',
+  'Table'
 ]
 
 export default componentList

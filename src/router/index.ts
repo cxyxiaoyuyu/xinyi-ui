@@ -9,6 +9,7 @@ import IconDemo from '../components/IconDemo.vue'
 import ButtonDemo from '../components/ButtonDemo.vue'
 import InputDemo from '../components/InputDemo.vue'
 import TabsDemo from '../components/InputDemo.vue'
+import TableDemo from '../components/TableDemo.vue'
 
 import install from '../markdown/install.md'
 import getStarted from '../markdown/get-started.md'
@@ -30,6 +31,7 @@ const router = createRouter({
         { path: 'button', component: ButtonDemo },
         { path: 'input', component: InputDemo },
         { path: 'tabs', component: TabsDemo },
+        { path: 'table', component: TableDemo },
       ]
     },
   ],
