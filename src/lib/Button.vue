@@ -43,10 +43,14 @@ export default {
     loading: {
       type: Boolean,
       default: false
+    },
+    size: {
+      type: String,
+      default: 'medium' 
     }
   },
   setup(props: any,{slots}) {
-    const { type, plain, round, circle, disabled, text } = props;
+    const { type, plain, round, circle, disabled, text,size } = props;
     const classes = {
       [`gulu-type-${type}`]: type,
       "gulu-text": text,
@@ -54,6 +58,7 @@ export default {
       "gulu-round": round,
       "gulu-circle": circle,
       "gulu-disabled": disabled,
+      [`gulu-size-${size}`]: size
     };
     return { classes };
   },
@@ -149,6 +154,35 @@ $colors: (
         background: none;
         border: none;
         color: $color;
+      }
+    }
+  }
+
+  &.gulu-size-big {
+    height: 38px;
+    font-size: 18px; 
+    padding: 16px;
+    &.gulu-circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      padding: 0; 
+      > .gulu-icon {
+        font-size: 1.2em; 
+      }
+    }
+  }
+  &.gulu-size-small {
+    height: 28px;
+    font-size: 14px; 
+    padding: 10px;
+    &.gulu-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      padding: 0; 
+      > .gulu-icon {
+        font-size: .9em; 
       }
     }
   }
