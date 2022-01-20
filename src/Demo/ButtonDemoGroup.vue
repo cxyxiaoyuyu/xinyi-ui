@@ -4,10 +4,9 @@
   <ButtonGroup>
     <Button type="primary" icon="prev">上一页</Button>
     <Button type="primary">下一页<icon icon="next"></icon></Button>
-    <Button type="primary">下一页<icon icon="next"></icon></Button>
   </ButtonGroup>
   <ButtonGroup>
-    <Button type="primary" icon="star"></Button>
+    <Button type="warning" icon="star"></Button>
     <Button type="success" icon="message"></Button>
     <Button type="danger" icon="delete"></Button>
   </ButtonGroup>
