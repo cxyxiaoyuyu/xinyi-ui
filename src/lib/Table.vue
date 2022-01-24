@@ -1,7 +1,7 @@
 <template>
   <table class="gulu-table" :class="classes">
 
-    <colgroup>
+    <!-- <colgroup>
       <col v-for="head in thead" :width="head.width">
     </colgroup>
 
@@ -14,7 +14,7 @@
       <tr v-for="row in data">
         <td v-for="item in row">{{ item }}</td>
       </tr>
-    </tbody>
+    </tbody> -->
   </table>
 </template>
 
