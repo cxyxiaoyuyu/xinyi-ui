@@ -1,8 +1,7 @@
 <template>
   <button class="gulu-button" :class="classes" v-bind="$attrs" :disabled="disabled">
     <Icon class="gulu-icon" :icon="icon" v-if="icon"></Icon>
-    <!-- <span v-if="$slots.default"><slot /></span> -->
-    <slot></slot>
+    <span v-if="$slots.default"><slot /></span>
     <!-- loading -->
     <Icon icon="loading" v-if="loading"></Icon>
   </button>

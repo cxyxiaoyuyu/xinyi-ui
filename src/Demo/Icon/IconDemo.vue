@@ -4,7 +4,7 @@
 
 </template>
 <script lang="ts">
-import IconDemo from "../Demo/IconDemo.vue";
+import IconDemo from "./basic.vue";
 export default {
   setup() {
     return { IconDemo };

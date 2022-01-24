@@ -3,13 +3,12 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Doc from '../views/Doc.vue'
 
-import DocDemo from '../components/DocDemo.vue'
-import SwitchDemo from '../components/SwitchDemo.vue'
-import IconDemo from '../components/IconDemo.vue'
-import ButtonDemo from '../components/ButtonDemo.vue'
+import SwitchDemo from '../demo/Switch/SwitchDemo.vue'
+import IconDemo from '../demo/Icon/IconDemo.vue'
+import ButtonDemo from '../demo/Button/ButtonDemo.vue'
 import InputDemo from '../components/InputDemo.vue'
-import TabsDemo from '../components/InputDemo.vue'
-import TableDemo from '../components/TableDemo.vue'
+import TabsDemo from '../components/TabsDemo.vue'
+import TableDemo from '../demo/Table/TableDemo.vue'
 
 import install from '../markdown/install.md'
 import getStarted from '../markdown/get-started.md'
@@ -23,8 +22,8 @@ const router = createRouter({
     { path: '/', name: 'home', component: Home },
     {
       path: '/doc', name: 'doc', component: Doc, children: [
-        { path: '', component: DocDemo },
-        { path: 'install', component: md(install)},
+        { path: '', redirect: '/doc/install' },
+        { path: 'install',component: md(install)},
         { path: 'get-started', component: md(getStarted) },
         { path: 'icon', component: IconDemo },
         { path: 'switch', component: SwitchDemo },

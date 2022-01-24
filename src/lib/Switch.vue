@@ -1,11 +1,11 @@
 <template>
-  <button class="gulu-switch" :class="{'gulu-checked': value}" @click="$emit('update:value',!value)">
+  <button class="gulu-switch" :class="{'gulu-checked': value,'gulu-disabled': disabled}" :disabled="disabled" @click="$emit('update:value',!value)">
     <span></span>
   </button>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent} from "vue";
 export default defineComponent({
   name: "XSwitch",
   props: {
@@ -13,7 +13,7 @@ export default defineComponent({
       type: Boolean,
       required: true
     },
-    disable: {
+    disabled: {
       type: Boolean,
       default: false 
     }
@@ -49,6 +49,9 @@ $sh: $bh - 4px;
     span {
       left: calc(100% - #{$sh} - 2px);
     }
+  }
+  &.gulu-disabled {
+    opacity: 0.7; 
   }
 }
 </style>

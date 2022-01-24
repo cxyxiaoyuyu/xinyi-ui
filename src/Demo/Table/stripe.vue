@@ -2,15 +2,13 @@
 
 <template>
   <div>
-    <Table stripe :thead="theadData" :data="tableData"></Table>
+    <x-table stripe :thead="theadData" :data="tableData"></x-table>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
-import Table from "../../lib/Table.vue";
 export default defineComponent({
-  components: { Table },
   setup() {
     const theadData = ref([
       { prop: "日期", width: 100 },

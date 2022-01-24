@@ -1,15 +1,13 @@
 <demo>基础用法</demo>
 <template>
   <div>
-    <Table :thead="theadData" :data="tableData"></Table>
+    <x-table :thead="theadData" :data="tableData"></x-table>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
-import Table from "../../lib/Table.vue";
 export default defineComponent({
-  components: { Table },
   setup() {
     const theadData = ref([
       { prop: "日期", width: 100 },

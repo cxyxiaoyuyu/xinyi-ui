@@ -1,30 +1,30 @@
 <template>
   <table class="gulu-table" :class="classes">
 
-    <!-- <colgroup>
-      <col v-for="head in thead" :width="head.width">
+    <colgroup>
+      <col v-for="head in thead" :width="head.with ?? head.width">
     </colgroup>
 
     <thead>
       <tr>
-        <th v-for="head in thead">{{ head.prop }}</th>
+        <th v-for="head in thead">{{ head.prop ? head.prop : head }}</th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="row in data">
         <td v-for="item in row">{{ item }}</td>
       </tr>
-    </tbody> -->
+    </tbody>
   </table>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 export default defineComponent({
-  name: "",
+  name: "XTable",
   props: {
     thead: {
-      type: Array,
+      type: Array || Object,
     },
     data: {
       type: Array,
