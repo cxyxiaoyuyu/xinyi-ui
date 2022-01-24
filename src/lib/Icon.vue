@@ -12,7 +12,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .gulu-icon {
   width: 1em;
   height: 1em;
