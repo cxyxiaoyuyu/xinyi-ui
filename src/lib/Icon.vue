@@ -7,6 +7,7 @@
 <script>
 import "../assets/svg.js";
 export default {
+  name: 'XIcon',
   props: ["icon"],
 };
 </script>

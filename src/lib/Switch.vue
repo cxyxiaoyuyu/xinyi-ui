@@ -7,7 +7,7 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 export default defineComponent({
-  name: "",
+  name: "XSwitch",
   props: {
     value: {
       type: Boolean,
