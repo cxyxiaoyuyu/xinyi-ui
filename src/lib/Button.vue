@@ -1,8 +1,8 @@
 <template>
   <button class="gulu-button" :class="classes" v-bind="$attrs" :disabled="disabled">
     <Icon class="gulu-icon" :icon="icon" v-if="icon"></Icon>
-    <span v-if="$slots.default"><slot /></span>
-
+    <!-- <span v-if="$slots.default"><slot /></span> -->
+    <slot></slot>
     <!-- loading -->
     <Icon icon="loading" v-if="loading"></Icon>
   </button>
@@ -10,6 +10,7 @@
 <script lang="ts">
 import Icon from "./Icon.vue";
 export default {
+  name: 'XButton',
   inheritAttrs: false,
   components: { Icon },
   props: {
