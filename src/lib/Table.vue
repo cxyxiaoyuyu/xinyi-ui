@@ -37,9 +37,6 @@ export default defineComponent({
       type: Boolean,
       default: false 
     },
-    height: {
-      type: Number,
-    }
   },
   setup(props) {
     const { stripe, border } = props

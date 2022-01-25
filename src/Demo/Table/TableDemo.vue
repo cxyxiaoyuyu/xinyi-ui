@@ -16,15 +16,10 @@ import Stripe from "./stripe.vue";
 import Border from "./border.vue";
 const thead = ["属性", "说明", "类型", "可选值", "默认值"];
 const data = [
-  ["type", "按钮类型", "string", "primary / success / warning / danger / info", "button"],
-  ["plain", "是否为朴素按钮", "boolean", "true/false", "false"],
-  ["text", "是否为文本按钮", "boolean", "true/false", "false"],
-  ["round", "是否为圆角按钮", "boolean", "true/false", "false"],
-  ["icon", "图标名", "string", "", ""],
-  ["circle", "是否为圆形按钮", "boolean", "true/false", "false"],
-  ["disabled", "是否disabled", "boolean", "true/false", "false"],
-  ["loading", "是否为加载中状态", "boolean", "true/false", "false"],
-  ["size", "按钮大小", "boolean", "big/medium/small", "medium"],
+  ["thead", "表头数据", "array/object", "", ""],
+  ["data", "表格数据", "array", "", ""],
+  ["stripe", "是否隔行变色", "boolean", "true/false", "false"],
+  ["border", "是否有边框", "boolean", "true/false", "false"],
 ];
 </script>
 
