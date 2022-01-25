@@ -57,6 +57,7 @@ $asideWidth: 200px;
     }
     .route {
       margin-bottom: 8px;
+      padding-left: 12px;
     }
   }
   main {
