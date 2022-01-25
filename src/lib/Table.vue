@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="row in data">
+      <tr v-for="row in (data as Array<Array<string>>)">
         <td v-for="item in row">{{ item }}</td>
       </tr>
     </tbody>
