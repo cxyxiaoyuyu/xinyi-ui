@@ -11,9 +11,9 @@ import { defineComponent, ref } from "vue";
 export default defineComponent({
   setup() {
     const theadData = ref([
-      { prop: "日期", width: 100 },
-      { prop: "姓名", width: 100 },
-      { prop: "地址", width: 200 },
+      { prop: "日期", width: 200 },
+      { prop: "姓名", width: 200 },
+      { prop: "地址" },
     ]);
     const tableData = ref([
       [1, 2, 3],

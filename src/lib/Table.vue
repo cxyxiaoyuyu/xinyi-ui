@@ -1,8 +1,8 @@
 <template>
   <table class="gulu-table" :class="classes" ref="table">
-    <!-- <colgroup>
+    <colgroup>
       <col v-for="head in thead" :width="head.width ?? head.width" />
-    </colgroup> -->
+    </colgroup>
 
     <thead>
       <tr>
