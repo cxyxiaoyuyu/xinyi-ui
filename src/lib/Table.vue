@@ -1,16 +1,16 @@
 <template>
-  <table class="gulu-table" :class="classes" ref="table">
+  <table class="gulu-table" :class="classes">
     <colgroup>
-      <col v-for="head in thead" :width="head.width ?? head.width" />
+      <col :ref="setColRef" v-for="head in thead" :width="head.width ?? head.width" />
     </colgroup>
 
     <thead>
       <tr>
         <th
-          v-for="head in thead"
-          @mousedown="mouseDown"
-          @mousemove="mouseMove"
-          @mouseup="mouseUp"
+          v-for="(head, index) in thead"
+          @mousedown="mouseDown($event, index)"
+          @mousemove="mouseMove($event, index)"
+          @mouseup="mouseUp($event)"
         >
           {{ head.prop ? head.prop : head }}
         </th>
@@ -25,7 +25,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from "vue";
+import { defineComponent, ref, onUpdated } from "vue";
 export default defineComponent({
   name: "XTable",
   props: {
@@ -51,12 +51,20 @@ export default defineComponent({
       "gulu-border": border,
     };
 
-    const table = ref(null);
     let th = undefined;
+    let currentIndex = undefined;
 
-    const mouseDown = (e) => {
+    let colRefs = [];
+    const setColRef = (el) => {
+      if (el) {
+        colRefs.push(el);
+      }
+    };
+
+    const mouseDown = (e, index) => {
       if (!border) return;
       th = e.target;
+      currentIndex = index;
 
       if (e.offsetX > th.offsetWidth - 10) {
         th.down = true;
@@ -65,28 +73,34 @@ export default defineComponent({
       }
     };
 
-    const mouseMove = (e) => {
+    const mouseMove = (e, index) => {
       if (!border) return;
       if (e.target.offsetWidth - e.offsetX < 10) {
         e.target.style.cursor = "col-resize";
       } else {
         e.target.style.cursor = "default";
       }
-      if (!th) th = e.target;
+      if (!th) {
+        th = e.target;
+        currentIndex = index;
+      }
       if (th.down) {
-        const width = th.oldWidth + (e.x - th.oldX);
-        th.style.width = width + "px";
+        // th.width = th.oldWidth + (e.x - th.oldX);
+        colRefs[currentIndex].width = th.oldWidth + (e.x - th.oldX);
         th.style.cursor = "col-resize";
       }
     };
 
     const mouseUp = (e) => {
       if (!border) return;
-      if (!th) th = e.target;
+      if (!th) {
+        th = e.target;
+        currentIndex = undefined
+      }
       th.down = false;
       th.style.cursor = "defult";
     };
-    return { classes, table, mouseDown, mouseMove, mouseUp };
+    return { classes,setColRef, mouseDown, mouseMove, mouseUp };
   },
 });
 </script>
