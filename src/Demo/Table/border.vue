@@ -1,4 +1,4 @@
-<demo>带边框</demo>
+<demo>带边框(可拖动改变列宽)</demo>
 
 <template>
   <div>
