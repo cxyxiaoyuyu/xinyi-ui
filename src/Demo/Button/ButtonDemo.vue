@@ -8,7 +8,7 @@
   <Demo :component="Size"></Demo>
 
   <h2>属性</h2>
-  <x-table :thead="thead" :data="data"></x-table>
+  <props-table :data="data"></props-table>
 </template>
 
 <script lang="ts" setup>
@@ -18,7 +18,6 @@ import Disabled from "./disabled.vue";
 import ButtonGroup from "./button-group.vue";
 import Loading from "./loading.vue";
 import Size from "./size.vue";
-const thead = ["属性", "说明", "类型", "可选值", "默认值"];
 const data = [
   ["type", "按钮类型", "string", "primary / success / warning / danger / info", "button"],
   ["plain", "是否为朴素按钮", "boolean", "true/false", "false"],
