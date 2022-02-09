@@ -6,9 +6,8 @@ import Doc from '../views/Doc.vue'
 import SwitchDemo from '../demo/Switch/SwitchDemo.vue'
 import IconDemo from '../demo/Icon/IconDemo.vue'
 import ButtonDemo from '../demo/Button/ButtonDemo.vue'
-import InputDemo from '../components/InputDemo.vue'
-import TabsDemo from '../components/TabsDemo.vue'
 import TableDemo from '../demo/Table/TableDemo.vue'
+import DrawerDemo from '../demo/Drawer/DrawerDemo.vue'
 
 import install from '../markdown/install.md'
 import getStarted from '../markdown/get-started.md'
@@ -28,9 +27,10 @@ const router = createRouter({
         { path: 'icon', component: IconDemo },
         { path: 'switch', component: SwitchDemo },
         { path: 'button', component: ButtonDemo },
-        { path: 'input', component: InputDemo },
-        { path: 'tabs', component: TabsDemo },
+        { path: 'drawer', component: DrawerDemo },
         { path: 'table', component: TableDemo },
+        { path: 'input', component: TableDemo },
+        { path: 'tabs', component: TableDemo },
       ]
     },
   ],
