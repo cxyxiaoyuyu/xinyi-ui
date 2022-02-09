@@ -1,7 +1,7 @@
 <demo>支持disabled</demo>
 
 <template>
-   <x-switch v-model:value="value" disabled/>
+   <x-switch v-model="value" disabled/>
 </template>
 
 <script lang="ts">

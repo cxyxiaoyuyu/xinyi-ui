@@ -1,5 +1,5 @@
 <template>
-  <button class="gulu-switch" :class="{'gulu-checked': value,'gulu-disabled': disabled}" :disabled="disabled" @click="$emit('update:value',!value)">
+  <button class="gulu-switch" :class="{'gulu-checked': modelValue,'gulu-disabled': disabled}" :disabled="disabled" @click="$emit('update:modelValue',!modelValue)">
     <span></span>
   </button>
 </template>
@@ -9,7 +9,7 @@ import { defineComponent} from "vue";
 export default defineComponent({
   name: "XSwitch",
   props: {
-    value: {
+    modelValue: {
       type: Boolean,
       required: true
     },

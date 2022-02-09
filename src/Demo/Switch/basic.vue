@@ -1,7 +1,7 @@
 <demo>常规用法</demo>
 
 <template>
-   <x-switch v-model:value="value" />
+   <x-switch v-model="value" />
 </template>
 
 <script lang="ts">
