@@ -44,7 +44,6 @@ $asideWidth: 200px;
   display: flex;
   aside {
     border-right: 1px solid #eee;
-    background: #fff;
     width: $asideWidth;
     height: calc(100vh - 60px);
     padding: 10px 20px;
