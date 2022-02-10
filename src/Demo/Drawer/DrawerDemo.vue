@@ -9,7 +9,7 @@
 import Basic from "./basic.vue";
 const data = [
   ["title", "标题", "string", "", ""],
-  ["v-model:visible", "是否显示", "boolean", "true/false", "false"],
+  ["v-model", "是否显示", "boolean", "true/false", "false"],
   ["direction","方向","string","top/left/right/bottom","bottom"]
 ]
 </script>

@@ -9,7 +9,7 @@
 
     <x-button style="margin-left:10px" @click="drawerVisible = true">open drawer</x-button>
 
-    <x-drawer title="我是标题" v-model:visible="drawerVisible" :direction="direction">
+    <x-drawer title="我是标题" v-model="drawerVisible" :direction="direction">
       <span>我来啦!</span>
     </x-drawer>
   </div>

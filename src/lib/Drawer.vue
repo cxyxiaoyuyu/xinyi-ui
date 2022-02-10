@@ -1,5 +1,5 @@
 <template>
-  <div :class="['drawer-mask', { open: visible }]" @click.self="closeDrawer">
+  <div :class="['drawer-mask', { open: modelValue }]" @click.self="closeDrawer">
     <div :class="['drawer', direction]">
       <div class="title">{{ title }}</div>
       <div class="content">
@@ -16,7 +16,7 @@ export default {
     title: {
       type: String,
     },
-    visible: {
+    modelValue: {
       type: Boolean,
       default: false,
     },
@@ -27,7 +27,7 @@ export default {
   },
   setup(props,{emit}){
     const closeDrawer = () => {
-      emit("update:visible", false);
+      emit("update:modelValue", false);
     }
     return { closeDrawer }
   }
