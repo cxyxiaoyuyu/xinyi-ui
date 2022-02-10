@@ -5,5 +5,5 @@
 
 <script lang="ts" setup>
 import { ref } from "@vue/reactivity";
-const message = ref("hello vue3");
+const message = ref("");
 </script>

@@ -5,5 +5,5 @@
 
 <script lang="ts" setup>
 import { ref } from "@vue/reactivity";
-const message = ref("");
+const message = ref("禁用状态");
 </script>

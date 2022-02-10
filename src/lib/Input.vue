@@ -7,25 +7,25 @@
       :readonly="readonly"
       :class="{ error: error && !modelValue }"
       v-bind="$attrs"
-      @change="$emit('change', $event.target.value)"
-      @focus="$emit('focus', $event.target.value)"
-      @input="$emit('input', $event.target.value)"
-      @blur="$emit('blur', $event.target.value)"
+      @input="handleInput($event)"
+      @blur="validate($event.target.value)"
     />
-    <template v-if="error && !modelValue">
+    <template v-if="error">
       <x-icon icon="error" class="errorIcon"></x-icon>
-      <span class="errorMessage">{{ error }}{{ modelValue }}</span>
     </template>
   </div>
+  <div class="errorMessage">{{ error }}</div>
 </template>
 <script lang="ts">
-  export default {
-    name: 'XInput',
-    inheritAttrs: false
-  }
+import Schema from 'async-validator'
+export default {
+  name: "XInput",
+  inheritAttrs: false,
+};
 </script>
 <script lang="ts" setup>
-defineProps({
+import {ref} from 'vue'
+const props = defineProps({
   modelValue: {
     type: [String, Number],
   },
@@ -37,10 +37,39 @@ defineProps({
     type: Boolean,
     default: false,
   },
-  error: {
-    type: String,
-  },
+  rule: {
+    type: Array 
+  }
 });
+
+
+const emit = defineEmits(["update:modelValue"]);
+
+const error = ref('')
+
+const validate = (value) => {
+  const rule = props.rule
+  // 校验描述对象
+  const desc = { 'xxx': rule };
+  // 创建Schema实例
+  const schema = new Schema(desc);
+  schema.validate({ 'xxx': value }, (errors) => {
+    console.log(errors,'error')
+    if(errors) {
+      error.value = errors[0].message 
+      
+    }else{
+      error.value = '' 
+    }
+  });
+}
+
+const handleInput = ($event) => {
+  // 校验
+  validate($event.target.value)
+  emit("update:modelValue", $event.target.value);
+};
+
 </script>
 
 <style lang="scss" scoped>
@@ -53,10 +82,11 @@ $focus-shadow-color: rgba(0, 0, 0, 0.3);
 $red: #f1453d;
 .gulu-input {
   font-size: $font-size;
-  margin-bottom: 20px;
+  margin-bottom: 6px;
   display: inline-flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
+  position: relative;
   width: 70%;
   > :not(:last-child) {
     margin-right: 0.3em;
@@ -64,9 +94,9 @@ $red: #f1453d;
   > .input {
     height: $height;
     border-radius: $border-radius;
+    border: 1px solid $border-color;
     font-size: 14px;
     padding: 0 8px;
-    border: 1px solid $border-color;
     width: 100%;
     &:hover {
       border: 1px solid $border-hover-color;
@@ -91,9 +121,13 @@ $red: #f1453d;
   }
   > .errorIcon {
     fill: $red;
+    position: absolute;
+    right: 12px;
   }
-  > .errorMessage {
-    color: $red;
-  }
+}
+.errorMessage {
+  color: $red;
+  font-size: 14px;
+  padding-left: 8px;
 }
 </style>
