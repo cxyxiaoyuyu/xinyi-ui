@@ -5,7 +5,7 @@
     <label><input type="radio" value="top" v-model="direction" />从上往下</label>
     <label><input type="radio" value="right" v-model="direction" />从右往左</label>
     <label><input type="radio" value="left" v-model="direction" />从左往右</label>
-    <label><input type="radio" value="bottom" v-model="direction" />从下往上开</label>
+    <label><input type="radio" value="bottom" v-model="direction" />从下往上</label>
 
     <x-button style="margin-left:10px" @click="drawerVisible = true">open drawer</x-button>
 
