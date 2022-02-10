@@ -4,6 +4,7 @@ import Button from './Button.vue'
 import ButtonGroup from './ButtonGroup.vue'
 import Table from './Table.vue'
 import Drawer from './Drawer.vue'
+import Input from './Input.vue'
 
 import { withInstall,makeInstaller } from '../util/install'
 
@@ -13,8 +14,9 @@ export const XIcon = withInstall(Icon)
 export const XButton = withInstall(Button,[ButtonGroup])
 export const XTable = withInstall(Table)
 export const XDrawer = withInstall(Drawer)
+export const XInput = withInstall(Input)
 
-const components = [XSwitch,XIcon,XButton,XTable,XDrawer]
+const components = [XSwitch,XIcon,XButton,XTable,XDrawer,XInput]
 
 // 全局引入
 export default makeInstaller(components)
