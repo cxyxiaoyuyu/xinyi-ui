@@ -5,6 +5,7 @@
       :value="modelValue"
       :disabled="disabled"
       :readonly="readonly"
+      :type="type"
       v-bind="$attrs"
       @input="handleInput($event)"
     />
@@ -30,6 +31,14 @@ const props = defineProps({
   modelValue: {
     type: [String, Number],
   },
+  clear: {
+    type: Boolean,
+    default: false
+  },
+  type: {
+    type: String,
+  default: "input" 
+  },
   disabled: {
     type: Boolean,
     default: false,
@@ -37,10 +46,6 @@ const props = defineProps({
   readonly: {
     type: Boolean,
     default: false,
-  },
-  clear: {
-    type: Boolean,
-    default: false
   },
   // rule: {
   //   type: Array 
