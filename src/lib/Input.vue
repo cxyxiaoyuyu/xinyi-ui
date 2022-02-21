@@ -5,16 +5,17 @@
       :value="modelValue"
       :disabled="disabled"
       :readonly="readonly"
-      :class="{ error: error && !modelValue }"
       v-bind="$attrs"
       @input="handleInput($event)"
-      @blur="validate($event.target.value)"
     />
-    <template v-if="error">
-      <x-icon icon="error" class="errorIcon"></x-icon>
-    </template>
+    <!-- <x-icon v-if="error" icon="error" class="errorIcon"></x-icon> -->
+    <x-icon v-if="clear && modelValue" 
+      icon="error" 
+      class="icon"
+      @click="clearInput"
+      ></x-icon>
   </div>
-  <div class="errorMessage">{{ error }}</div>
+  <!-- <div class="errorMessage">{{ error }}</div> -->
 </template>
 <script lang="ts">
 import Schema from 'async-validator'
@@ -37,38 +38,46 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  rule: {
-    type: Array 
-  }
+  clear: {
+    type: Boolean,
+    default: false
+  },
+  // rule: {
+  //   type: Array 
+  // }
 });
 
 
 const emit = defineEmits(["update:modelValue"]);
 
-const error = ref('')
+// const error = ref('')
 
-const validate = (value) => {
-  const rule = props.rule
-  // 校验描述对象
-  const desc = { 'xxx': rule };
-  // 创建Schema实例
-  const schema = new Schema(desc);
-  schema.validate({ 'xxx': value }, (errors) => {
-    console.log(errors,'error')
-    if(errors) {
-      error.value = errors[0].message 
+// const validate = (value) => {
+//   const rule = props.rule
+//   // 校验描述对象
+//   const desc = { 'xxx': rule };
+//   // 创建Schema实例
+//   const schema = new Schema(desc);
+//   schema.validate({ 'xxx': value }, (errors) => {
+//     console.log(errors,'error')
+//     if(errors) {
+//       error.value = errors[0].message 
       
-    }else{
-      error.value = '' 
-    }
-  });
-}
+//     }else{
+//       error.value = '' 
+//     }
+//   });
+// }
 
 const handleInput = ($event) => {
   // 校验
-  validate($event.target.value)
+  // validate($event.target.value)
   emit("update:modelValue", $event.target.value);
 };
+
+const clearInput = () => {
+  emit("update:modelValue",'')
+}
 
 </script>
 
@@ -116,11 +125,11 @@ $red: #f1453d;
       cursor: not-allowed;
     }
   }
-  > .input.error {
-    border: 1px solid $red;
-  }
-  > .errorIcon {
-    fill: $red;
+  // > .input.error {
+  //   border: 1px solid $red;
+  // }
+  > .icon {
+    fill: $border-hover-color;
     position: absolute;
     right: 12px;
   }

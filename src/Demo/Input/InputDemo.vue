@@ -1,9 +1,9 @@
 <template>
   <h2>Input 组件示例</h2>
   <Demo :component="Basic"></Demo>
+  <Demo :component="Clear"></Demo>
   <Demo :component="Disabled"></Demo>
   <Demo :component="Readonly"></Demo>
-  <Demo :component="Error"></Demo>
 
   <props-table :data="data"></props-table>
 </template>
@@ -12,10 +12,11 @@
 import Basic from "./basic.vue";
 import Disabled from "./disabled.vue";
 import Readonly from "./readonly.vue";
-import Error from "./error.vue";
+import Clear from './clear.vue'
 const data = [
   ["v-model", "是否显示", "boolean", "true/false", "false"],
   ["disabled", "是否禁用", "boolean", "true/false", "false"],
   ["readonly", "是否只读", "boolean", "true/false", "false"],
+  ["clear", "是否一键清空", "boolean", "true/false", "false"],
 ]
 </script>
