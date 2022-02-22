@@ -5,7 +5,8 @@ const componentList:Array<string> = [
   'Drawer',
   'Input',
   'Tabs',
-  'Table'
+  'Table',
+  'Form'
 ]
 
 export default componentList

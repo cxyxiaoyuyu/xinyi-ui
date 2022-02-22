@@ -1,0 +1,68 @@
+<template>
+  <div class="gulu-form-item">
+    <!-- label -->
+    <label v-if="label">{{ label }}</label>
+    <slot />
+    <!-- 校验信息 -->
+    <span class="error" v-if="error">{{ error }}</span>
+  </div>
+</template>
+
+<script lang="ts">
+export default {
+  name: "XFormItem",
+};
+</script>
+<script lang="ts" setup>
+import { ref, inject } from "vue";
+import Schema from 'async-validator'
+const props = defineProps({
+  label: {
+    type: String,
+    default: "",
+  },
+  prop: {
+    type: String,
+  }
+});
+const error = ref(""); // error 为空说明校验通过
+const form:any = inject("form");
+
+const validate = () => {
+  console.log('validate')
+  const rules = form.props.rules[props.prop];
+  const value = form.props.model[props.prop];
+  console.log(rules,value)
+  // 校验描述对象
+  const desc = { [props.prop]: rules };
+  // 创建Schema实例
+  const schema = new Schema(desc);
+  return schema.validate({ [props.prop]: value }, (errors) => {
+    if (errors) {
+      error.value = errors[0].message;
+    } else {
+      // 校验通过
+      error.value = "";
+    }
+  });
+};
+defineExpose({validate})
+</script>
+
+<style lang="scss">
+.gulu-form-item {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  width: 70%;
+  label {
+    width: 4em;
+    text-align: left;
+  }
+  .error {
+    color: red;
+    padding-left: 20px;
+    font-size: 14px;
+  }
+}
+</style>
