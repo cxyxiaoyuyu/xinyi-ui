@@ -14,7 +14,8 @@ export default {
 };
 </script>
 <script lang="ts" setup>
-import { ref, inject } from "vue";
+import { ref, inject,onMounted,getCurrentInstance } from "vue";
+import eventBus from '../util/bus'
 import Schema from 'async-validator'
 const props = defineProps({
   label: {
@@ -28,11 +29,16 @@ const props = defineProps({
 const error = ref(""); // error 为空说明校验通过
 const form:any = inject("form");
 
+const formItem = getCurrentInstance()
+onMounted(() => {
+  if(props.prop){  // 如果有prop 则将当前实例添加给form父组件
+    eventBus.emit('addFormItem',formItem)
+  }
+})
+
 const validate = () => {
-  console.log('validate')
   const rules = form.props.rules[props.prop];
   const value = form.props.model[props.prop];
-  console.log(rules,value)
   // 校验描述对象
   const desc = { [props.prop]: rules };
   // 创建Schema实例

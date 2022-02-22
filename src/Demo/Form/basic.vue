@@ -23,7 +23,7 @@ import { reactive,ref } from "vue";
 
 const userInfo = reactive({
   username: "tom",
-  password: "123",
+  password: "",
 });
 const rules = reactive({
   username: [{ required: true, message: "请输入用户名" }],
@@ -33,8 +33,9 @@ const rules = reactive({
 const loginForm = ref(null)
 
 const login = () => {
-  console.log("login");
-  console.log(loginForm.value)  
+  loginForm.value.validate(valid => {
+    console.log(valid) 
+  })
 };
 </script>
 

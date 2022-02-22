@@ -49,6 +49,7 @@ export default {
       default: 'medium' 
     }
   },
+  // emits: ['click'],
   setup(props: any,{slots}) {
     const { type, plain, round, circle, disabled, text,size } = props;
     const classes = {
