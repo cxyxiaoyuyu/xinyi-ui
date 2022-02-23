@@ -7,6 +7,7 @@ import Drawer from './Drawer.vue'
 import Input from './Input.vue'
 import FormItem from './FormItem.vue'
 import Form from './Form.vue'
+import Dialog from './Dialog.vue'
 
 import { withInstall,makeInstaller } from '../util/install'
 
@@ -18,8 +19,9 @@ export const XTable = withInstall(Table)
 export const XDrawer = withInstall(Drawer)
 export const XInput = withInstall(Input)
 export const XForm = withInstall(Form,[FormItem])
+export const XDialog = withInstall(Dialog)
 
-const components = [XSwitch,XIcon,XButton,XTable,XDrawer,XInput,XForm]
+const components = [XSwitch,XIcon,XButton,XTable,XDrawer,XInput,XForm,XDialog]
 
 // 全局引入
 export default makeInstaller(components)

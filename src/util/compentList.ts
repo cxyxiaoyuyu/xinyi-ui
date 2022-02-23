@@ -2,11 +2,13 @@ const componentList:Array<string> = [
   'Icon',
   'Button',
   'Switch',
-  'Drawer',
   'Input',
   'Tabs',
   'Table',
-  'Form'
+  'Form',
+  'Drawer',
+  'Dialog',
+  'Toast'
 ]
 
 export default componentList
