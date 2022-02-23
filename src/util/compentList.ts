@@ -8,6 +8,7 @@ const componentList:Array<string> = [
   'Form',
   'Drawer',
   'Dialog',
+  'MessageBox',
   'Toast'
 ]
 

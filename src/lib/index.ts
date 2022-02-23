@@ -8,6 +8,7 @@ import Input from './Input.vue'
 import FormItem from './FormItem.vue'
 import Form from './Form.vue'
 import Dialog from './Dialog.vue'
+export { openMessageBox } from './openMessageBox'
 
 import { withInstall,makeInstaller } from '../util/install'
 
