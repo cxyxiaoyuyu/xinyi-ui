@@ -154,6 +154,7 @@ $colors: (
       &.gulu-text {
         background: none;
         border: none;
+        box-shadow: none;
         color: $color;
       }
     }
