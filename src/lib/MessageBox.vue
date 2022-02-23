@@ -1,6 +1,6 @@
 <template>
   <Teleport to="body">
-    <div class="gulu-message-overlay" @click="onClickOverlay"></div>
+    <div class="gulu-message-overlay" @click="close"></div>
     <div class="gulu-message-wrapper">
       <div class="gulu-message">
         <header>
@@ -28,13 +28,16 @@ defineProps({
     type: String,
   }
 })
-const emit = defineEmits(['ok','cancel'])
+const emit = defineEmits(['ok','cancel','close'])
 const cancel = () => {
   emit('cancel')
 }
 const ok = () => {
   emit('ok')
 }
+const close = () => {
+  emit('close')
+} 
 </script>
 
 <style lang="scss">
