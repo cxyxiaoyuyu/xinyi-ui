@@ -8,8 +8,9 @@ import IconDemo from '../demo/Icon/IconDemo.vue'
 import ButtonDemo from '../demo/Button/ButtonDemo.vue'
 import TableDemo from '../demo/Table/TableDemo.vue'
 import InputDemo from '../demo/Input/InputDemo.vue'
-import DrawerDemo from '../demo/Drawer/DrawerDemo.vue'
 import FormDemo from '../demo/Form/FormDemo.vue'
+import DrawerDemo from '../demo/Drawer/DrawerDemo.vue'
+import DialogDemo from '../demo/Dialog/DialogDemo.vue'
 
 import install from '../markdown/install.md'
 import getStarted from '../markdown/get-started.md'
@@ -29,11 +30,12 @@ const router = createRouter({
         { path: 'icon', component: IconDemo },
         { path: 'switch', component: SwitchDemo },
         { path: 'button', component: ButtonDemo },
-        { path: 'drawer', component: DrawerDemo },
         { path: 'table', component: TableDemo },
         { path: 'input', component: InputDemo },
         { path: 'form', component: FormDemo },
         { path: 'tabs', component: TableDemo },
+        { path: 'drawer', component: DrawerDemo },
+        { path: 'dialog', component: DialogDemo },
       ]
     },
   ],
