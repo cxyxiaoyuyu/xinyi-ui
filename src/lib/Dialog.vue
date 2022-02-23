@@ -48,7 +48,7 @@ $border-color: #d9d9d9;
   background: white;
   border-radius: $radius;
   box-shadow: 0 0 3px fade_out(black, 0.5);
-  min-width: 15em;
+  min-width: 500px;
   max-width: 90%;
   &-overlay {
     position: fixed;
