@@ -64,12 +64,12 @@ const validate = () => {
 };
 
 // 对该表单项进行重置，将其值重置为初始值并移除校验结果
-const resetFields = () => {
+const resetField = () => {
   console.log(child,'input',initValue)
   child.exposed.emit('update:modelValue',initValue)
   error.value = ''
 }
-defineExpose({validate, resetFields})
+defineExpose({validate, resetField})
 </script>
 
 <style lang="scss">

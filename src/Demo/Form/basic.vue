@@ -17,8 +17,8 @@
       ></x-input>
     </x-form-item>
     <x-form-item>
-      <x-button @click="login">登录</x-button>
-      <x-button @click="reset">重置</x-button>
+      <x-button @click="login" type="primary">登录</x-button>
+      <x-button @click="reset" type="warning">重置</x-button>
     </x-form-item>
   </x-form>
 </template>
@@ -34,13 +34,6 @@ const rules = reactive({
   username: [{ required: true, message: "请输入用户名" }],
   password: [{ required: true, message: "请输入密码" }],
 });
-
-const update1 = (value)=>{
-  console.log(value,'1111')
-}
-const update2 = (value) => {
-  console.log(value,'2222')
-}
 
 const loginForm = ref(null)
 

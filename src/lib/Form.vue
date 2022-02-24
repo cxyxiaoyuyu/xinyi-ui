@@ -46,7 +46,7 @@ const validate = (callback) => {
 
 const resetFields = () => {
   // 所有子 formItem 执行自身resetFields
-  children.map((item) => item.exposed.resetFields());
+  children.map((item) => item.exposed.resetField());
 };
 defineExpose({ validate, resetFields });
 </script>
