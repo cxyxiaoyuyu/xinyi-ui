@@ -15,7 +15,7 @@ import eventBus from "../util/bus";
 const form = getCurrentInstance();
 console.log("form", form);
 provide("form", form);
-defineProps({
+const props = defineProps({
   model: {
     type: Object,
     required: true,
@@ -26,7 +26,7 @@ defineProps({
 });
 
 // 存储所有有prop 的 子formItem
-const children:Array<any> = [];
+const children: Array<any> = [];
 
 eventBus.on("addFormItem", (child) => {
   children.push(child);
@@ -43,7 +43,12 @@ const validate = (callback) => {
       callback(false);
     });
 };
-defineExpose({ validate });
+
+const resetFields = () => {
+  // 所有子 formItem 执行自身resetFields
+  children.map((item) => item.exposed.resetFields());
+};
+defineExpose({ validate, resetFields });
 </script>
 
 <style lang="scss"></style>

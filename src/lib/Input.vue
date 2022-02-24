@@ -24,7 +24,8 @@ export default {
 };
 </script>
 <script lang="ts" setup>
-import {ref,getCurrentInstance} from 'vue'
+import {ref,getCurrentInstance,onMounted} from 'vue'
+import eventBus from '../util/bus'
 const props = defineProps({
   modelValue: {
     type: [String, Number],
@@ -46,9 +47,15 @@ const props = defineProps({
     default: false,
   },
 });
-const parent:any = getCurrentInstance().parent
+const input:any = getCurrentInstance()
+const parent:any = input.parent
 console.log(parent,'parent')
 const emit = defineEmits(["update:modelValue"]);
+
+onMounted(() => {
+  console.log('onMounted')
+  eventBus.emit('addInput',input)
+})
 
 const handleInput = ($event) => {
   emit("update:modelValue", $event.target.value);
@@ -61,7 +68,7 @@ const handleInput = ($event) => {
 const clearInput = () => {
   emit("update:modelValue",'')
 }
-
+defineExpose({emit})
 </script>
 
 <style lang="scss" scoped>

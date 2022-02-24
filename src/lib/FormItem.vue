@@ -14,7 +14,7 @@ export default {
 };
 </script>
 <script lang="ts" setup>
-import { ref, inject,onMounted,getCurrentInstance } from "vue";
+import { ref, inject,onMounted,getCurrentInstance, useSlots } from "vue";
 import eventBus from '../util/bus'
 import Schema from 'async-validator'
 const props = defineProps({
@@ -29,6 +29,16 @@ const props = defineProps({
 const error = ref(""); // error 为空说明校验通过
 const form:any = inject("form");
 
+const slots = useSlots()
+const initValue = form.props.model[props.prop]
+
+let child:any
+eventBus.on('addInput',(input:any)=>{
+  if(input.parent === formItem){  // 判断该子组件的父组件是否是当前组件 否则child会被覆盖
+    child = input
+  }
+})
+
 const formItem = getCurrentInstance()
 onMounted(() => {
   if(props.prop){  // 如果有prop 则将当前实例添加给form父组件
@@ -37,7 +47,7 @@ onMounted(() => {
 })
 
 const validate = () => {
-  const rules = form.props.rules[props.prop];
+  const rules = form.props.rules[props.prop] || [];
   const value = form.props.model[props.prop];
   // 校验描述对象
   const desc = { [props.prop]: rules };
@@ -52,7 +62,14 @@ const validate = () => {
     }
   });
 };
-defineExpose({validate})
+
+// 对该表单项进行重置，将其值重置为初始值并移除校验结果
+const resetFields = () => {
+  console.log(child,'input',initValue)
+  child.exposed.emit('update:modelValue',initValue)
+  error.value = ''
+}
+defineExpose({validate, resetFields})
 </script>
 
 <style lang="scss">

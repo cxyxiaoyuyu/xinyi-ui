@@ -3,22 +3,17 @@
 <template>
   <x-form :model="userInfo" :rules="rules" ref="loginForm">
     <x-form-item label="用户名" prop="username">
-      <x-input
-        v-model="userInfo.username"
-        placeholder="请输入用户名"
-        clear
-      ></x-input>
+      <x-input v-model="userInfo.username" placeholder="请输入用户名"></x-input>
     </x-form-item>
     <x-form-item label="密码" prop="password">
       <x-input
+        type="password"
         v-model="userInfo.password"
         placeholder="请输入密码"
-        clear
       ></x-input>
     </x-form-item>
     <x-form-item>
       <x-button @click="login">登录</x-button>
-      <x-button @click="reset">重置</x-button>
     </x-form-item>
   </x-form>
 </template>
@@ -27,20 +22,13 @@
 import { reactive,ref } from "vue";
 
 const userInfo = reactive({
-  password: "12333",
-  username: 'tom'
+  username: "tom",
+  password: "",
 });
 const rules = reactive({
   username: [{ required: true, message: "请输入用户名" }],
   password: [{ required: true, message: "请输入密码" }],
 });
-
-const update1 = (value)=>{
-  console.log(value,'1111')
-}
-const update2 = (value) => {
-  console.log(value,'2222')
-}
 
 const loginForm = ref(null)
 
@@ -49,9 +37,6 @@ const login = () => {
     console.log(valid) 
   })
 };
-const reset = () => {
-  loginForm.value.resetFields()
-}
 </script>
 
 <style lang="scss" scoped></style>
