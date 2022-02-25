@@ -1,7 +1,12 @@
 import MessageBox from './MessageBox.vue'
 import { createApp, h } from 'vue'
 
-export const openMessageBox = (options) => {
+interface Options {
+  title: string,
+  content: string
+}
+
+export const openMessageBox = (options:Options) => {
 
   return new Promise((resolve, reject) => {
     const { title, content } = options
@@ -9,8 +14,8 @@ export const openMessageBox = (options) => {
     const app = createApp({
       render() {
         return h(MessageBox, {
-          title: '提示',
-          content: '内容',
+          title,
+          content,
           'onOk': () => {
             app.unmount()
             resolve('ok')
