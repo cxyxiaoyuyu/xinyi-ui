@@ -25,6 +25,7 @@
 
 <script lang="ts" setup>
 import { reactive,ref } from "vue";
+import { openMessageBox } from "../../lib";
 
 const userInfo = reactive({
   password: "12333",
@@ -40,6 +41,9 @@ const loginForm = ref(null)
 const login = () => {
   loginForm.value.validate(valid => {
     console.log(valid) 
+    if(valid){
+      openMessageBox({title: '提示',content: '登录成功'}) 
+    }
   })
 };
 const reset = () => {
