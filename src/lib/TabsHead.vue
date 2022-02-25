@@ -14,7 +14,6 @@ export default {
 import TabsItem from '../lib/TabsItem.vue'
 import { useSlots } from 'vue'
 const slots = useSlots()
-console.log(slots.default())
 const defaults = slots.default()
 // 检查每个子组件的类型
 defaults.forEach( tag => {
