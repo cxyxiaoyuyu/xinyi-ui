@@ -8,6 +8,12 @@ import Input from './Input.vue'
 import FormItem from './FormItem.vue'
 import Form from './Form.vue'
 import Dialog from './Dialog.vue'
+import Tabs from './Tabs.vue'
+import TabsHead from './TabsHead.vue'
+import TabsBody from './TabsBody.vue'
+import TabsItem from './TabsItem.vue'
+import TabsPane from './TabsPane.vue'
+
 export { openMessageBox } from './openMessageBox'
 export { openToast } from './openToast'
 
@@ -22,8 +28,9 @@ export const XDrawer = withInstall(Drawer)
 export const XInput = withInstall(Input)
 export const XForm = withInstall(Form,[FormItem])
 export const XDialog = withInstall(Dialog)
+export const XTabs = withInstall(Tabs,[TabsHead,TabsBody,TabsItem,TabsPane])
 
-const components = [XSwitch,XIcon,XButton,XTable,XDrawer,XInput,XForm,XDialog]
+const components = [XSwitch,XIcon,XButton,XTable,XDrawer,XInput,XForm,XDialog,XTabs]
 
 // 全局引入
 export default makeInstaller(components)

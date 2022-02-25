@@ -13,6 +13,7 @@ import DrawerDemo from '../demo/Drawer/DrawerDemo.vue'
 import DialogDemo from '../demo/Dialog/DialogDemo.vue'
 import MessageBoxDemo from '../demo/MessageBox/MessageBoxDemo.vue'
 import ToastDemo from '../demo/Toast/ToastDemo.vue'
+import TabsDemo from '../demo/Tabs/TabsDemo.vue'
 
 import install from '../markdown/install.md'
 import getStarted from '../markdown/get-started.md'
@@ -35,7 +36,7 @@ const router = createRouter({
         { path: 'table', component: TableDemo },
         { path: 'input', component: InputDemo },
         { path: 'form', component: FormDemo },
-        { path: 'tabs', component: TableDemo },
+        { path: 'tabs', component: TabsDemo },
         { path: 'drawer', component: DrawerDemo },
         { path: 'dialog', component: DialogDemo },
         { path: 'messageBox', component: MessageBoxDemo },
