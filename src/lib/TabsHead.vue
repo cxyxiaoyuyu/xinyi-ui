@@ -10,6 +10,19 @@ export default {
   name: 'XTabsHead'
 }
 </script>
+<script lang="ts" setup>
+import TabsItem from '../lib/TabsItem.vue'
+import { useSlots } from 'vue'
+const slots = useSlots()
+console.log(slots.default())
+const defaults = slots.default()
+// 检查每个子组件的类型
+defaults.forEach( tag => {
+  if(tag.type !== TabsItem){
+    throw new Error('TabsHead 子标签必须是 TabsItem ') 
+  }
+})
+</script>
 
 <style lang="scss" scoped>
 $tab-height: 40px;
