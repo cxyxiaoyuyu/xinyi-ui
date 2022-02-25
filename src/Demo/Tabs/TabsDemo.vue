@@ -1,15 +1,23 @@
 <template>
   <h2>Tabs 组件示例</h2>
   <Demo :component="Basic"></Demo>
-  <props-table :data="data"></props-table>
+  <Demo :component="Disabled"></Demo>
+  <props-table :data="data" title="tabs 属性"></props-table>
+  <props-table :data="dataItem" title="tabsItem 属性"></props-table>
+  <props-table :data="dataPane" title="tabsPane 属性"></props-table>
 </template>
 
 <script lang="ts" setup>
 import Basic from "./basic.vue";
+import Disabled from "./disabled.vue";
 const data = [
-  ["autoClose", "多少秒以后关闭 或不自动关闭", "boolean/number", "true/false", "5"],
-  ["closeButton", "关闭按钮内容", "string", "--", "关闭"],
-  ["enableHtml", "是否支持html", "boolean", "true/false", "false"],
-  ["position", "toast显示的位置", "string", "top/middle/bottom", "top"],
+  ["selected", "选中的标签名称 必填", "string", "--", "--"],
+]
+const dataItem = [
+  ["name", "标签名称 必填", "string", "--", "--"],
+  ["disabled", "是否disabled", "boolean", "true/false", "false"],
+]
+const dataPane = [
+  ["name", "标签名称 必填", "string", "--", "--"],
 ]
 </script>
