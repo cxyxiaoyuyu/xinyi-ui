@@ -28,8 +28,8 @@ import { reactive,ref } from "vue";
 import { openMessageBox } from "../../lib";
 
 const userInfo = reactive({
-  password: "12333",
-  username: 'tom'
+  username: 'tom',
+  password: "",
 });
 const rules = reactive({
   username: [{ required: true, message: "请输入用户名" }],
