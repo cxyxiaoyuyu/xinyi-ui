@@ -9,8 +9,7 @@ export default {
 };
 </script>
 <script lang="ts" setup>
-import { ref } from "vue";
-import eventBus from '../util/bus'
+import { inject, ref } from "vue";
 const active = ref(false);
 const props = defineProps({
   name: {
@@ -18,6 +17,7 @@ const props = defineProps({
     required: true,
   },
 });
+const eventBus:any = inject('eventBus')
 eventBus.on('update:selected',(name)=>{
   active.value = name === props.name
 })

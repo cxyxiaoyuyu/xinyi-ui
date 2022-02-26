@@ -10,8 +10,10 @@ export default {
 }
 </script>
 <script lang="ts" setup>
-import { onMounted } from 'vue'
-import eventBus from '../util/bus'
+import { onMounted, provide } from 'vue'
+import mitt from 'mitt'
+const eventBus = mitt()
+provide('eventBus',eventBus)
 const props = defineProps({
   selected: {
     type: String,

@@ -9,8 +9,7 @@ export default {
 };
 </script>
 <script lang="ts" setup>
-import { computed, getCurrentInstance, ref } from 'vue'
-import eventBus from '../util/bus'
+import { computed, getCurrentInstance, inject, ref } from 'vue'
 const active = ref(false)
 const props = defineProps({
   disabled: {
@@ -31,7 +30,7 @@ const classes = computed(()=>{
     disabled: props.disabled
   }
 })
-
+const eventBus:any = inject('eventBus')
 const onClick = () => {
   if (props.disabled) { return }
   eventBus.emit('update:selected', props.name)
