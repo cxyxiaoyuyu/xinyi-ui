@@ -55,7 +55,7 @@ $asideWidth: 200px;
       font-size: 17px;
     }
     .route {
-      margin-bottom: 8px;
+      margin-bottom: 12px;
       padding-left: 12px;
     }
   }

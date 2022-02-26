@@ -1,10 +1,33 @@
 # 开始使用
 请先[安装](#/doc/install)本组件库。
 
-然后在你的代码中写入下面的代码
+## 全局引入
+```
+import { createApp } from 'vue'
+import App from './App.vue'
+
+import XinyiUI from 'xinyi-ui'
+
+const app = createApp(App)
+app.use(XinyiUI)
+app.mount('#app')
 
 ```
-import {Button, Tabs, Switch, Dialog} from "xinyi-ui"
+
+## 单个引入
+
+```
+import { createApp } from 'vue'
+import App from './App.vue'
+
+import { XIcon, XSwitch, XButton,XTable} from 'xinyi-ui'
+
+const app = createApp(App)
+app.use(XIcon)
+app.use(XSwitch)
+app.use(XButton)
+app.use(XTable)
+app.mount('#app')
 ```
 
 就可以使用我提供的组件了。
@@ -16,13 +39,9 @@ import {Button, Tabs, Switch, Dialog} from "xinyi-ui"
 ```
 <template>
   <div>
-    <Button>按钮</Button>
+    <x-button type="primary">按钮</x-button>
   </div>
 </template>
-<script>
-import {Button, Tabs, Switch, Dialog} from "xinyi-ui"
-export default {
-  components: {Button}
-}
-</script>
 ```
+
+下一节：[button组件](#/doc/button)
