@@ -4,6 +4,7 @@
   </div>
 </template>
 <script lang="ts">
+
 export default {
   name: "XForm",
 };
@@ -13,7 +14,6 @@ import { provide, getCurrentInstance, ref } from "vue";
 import eventBus from "../util/bus";
 
 const form = getCurrentInstance();
-console.log("form", form);
 provide("form", form);
 const props = defineProps({
   model: {

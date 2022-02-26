@@ -40,7 +40,6 @@ const loginForm = ref(null)
 
 const login = () => {
   loginForm.value.validate(valid => {
-    console.log(valid) 
     if(valid){
       openMessageBox({title: '提示',content: '登录成功'}) 
     }

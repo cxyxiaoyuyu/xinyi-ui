@@ -49,11 +49,9 @@ const props = defineProps({
 });
 const input:any = getCurrentInstance()
 const parent:any = input.parent
-console.log(parent,'parent')
 const emit = defineEmits(["update:modelValue"]);
 
 onMounted(() => {
-  console.log('onMounted')
   eventBus.emit('addInput',input)
 })
 
