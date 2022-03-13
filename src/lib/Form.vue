@@ -11,7 +11,10 @@ export default {
 </script>
 <script lang="ts" setup>
 import { provide, getCurrentInstance, ref } from "vue";
-// import eventBus from "../util/bus";
+// import eventBus1 from "../util/bus";
+// import eventBus2 from '../util/bus'
+// console.log(eventBus1 === eventBus2)  // true
+
 import mitt from 'mitt'
 const eventBus = mitt()
 console.log(eventBus,'eventBus')
