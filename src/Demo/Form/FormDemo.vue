@@ -1,6 +1,7 @@
 <template>
   <h2>Form 组件示例</h2>
   <Demo :component="Basic"></Demo>
+  <Demo :component="Basic"></Demo>
   <props-table :data="data" title="Form 属性"></props-table>
 
   <h2>Form 方法</h2>

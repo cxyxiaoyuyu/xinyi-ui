@@ -11,10 +11,13 @@ export default {
 </script>
 <script lang="ts" setup>
 import { provide, getCurrentInstance, ref } from "vue";
-import eventBus from "../util/bus";
-
+// import eventBus from "../util/bus";
+import mitt from 'mitt'
+const eventBus = mitt()
+console.log(eventBus,'eventBus')
 const form = getCurrentInstance();
 provide("form", form);
+provide('eventBus',eventBus)
 const props = defineProps({
   model: {
     type: Object,
@@ -29,6 +32,7 @@ const props = defineProps({
 const children: Array<any> = [];
 
 eventBus.on("addFormItem", (child) => {
+  console.log(child)
   children.push(child);
 });
 

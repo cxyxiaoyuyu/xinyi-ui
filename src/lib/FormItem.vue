@@ -10,12 +10,11 @@
 
 <script lang="ts">
 export default {
-  name: "XFormItem",
+  name: "XFormItem"
 };
 </script>
 <script lang="ts" setup>
 import { ref, inject,onMounted,getCurrentInstance, useSlots } from "vue";
-import eventBus from '../util/bus'
 import Schema from 'async-validator'
 const props = defineProps({
   label: {
@@ -28,6 +27,7 @@ const props = defineProps({
 });
 const error = ref(""); // error 为空说明校验通过
 const form:any = inject("form");
+const eventBus:any = inject('eventBus')
 
 const slots = useSlots()
 const initValue = form.props.model[props.prop]
@@ -42,6 +42,7 @@ eventBus.on('addInput',(input:any)=>{
 const formItem = getCurrentInstance()
 onMounted(() => {
   if(props.prop){  // 如果有prop 则将当前实例添加给form父组件
+    console.log('addFormItem')
     eventBus.emit('addFormItem',formItem)
   }
 })
