@@ -19,6 +19,7 @@ const vueDemoPlugin = () => {
         const file = fs.readFileSync(path.split('?')[0]).toString()
         const parsed = baseParse(file).children.find(n => n.tag === 'demo')
         const main = file.split(parsed.loc.source).join('').trim()
+        // 这个函数后面是谁去执行的呢？？？
         return `export default Comp => { 
         Comp.__sourceCode = ${JSON.stringify(main)} 
         Comp.__sourceCodeTitle = ${JSON.stringify(code)}   
