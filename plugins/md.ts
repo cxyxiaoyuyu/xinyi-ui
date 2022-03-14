@@ -7,7 +7,7 @@ const mdToJs = str => {
   return `export default ${content}`
 }
 
-export function md() {
+export default ()=>{
   return {
     name: 'vite-plugin-md',
     transform(src,url){
