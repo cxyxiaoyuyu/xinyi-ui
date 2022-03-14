@@ -9,7 +9,7 @@ const mdToJs = str => {
 
 export function md() {
   return {
-    name: 'md',
+    name: 'vite-plugin-md',
     transform(src,url){
       if(url.endsWith('.md')){
         return {
